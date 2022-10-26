@@ -58,7 +58,7 @@ function StoryForm()
             }
         )
         .then(function(response) {
-          alert();
+          //alert();
           setSpinner(true);
         })
         .catch(function(error) {
@@ -68,19 +68,12 @@ function StoryForm()
         console.log(data)
      }
 
-    // const handleClick = async() => {
-    //     const data = await axios.get('api/foo')
-    //     setData({
-    //         data: data,
-    //         loading: false
-    //     })
-    // }
   return (
     <>
         <h1>My Hacker stories</h1>
         <span>Search: <input ref={t} name="sBox"/> <button onClick={()=>{handle()}}>Submit</button></span>
         {spinner && (
-        <p>something is loading</p>
+        <p>Data is loading</p>
         )}
         {/* {
             data.map((e, index) =>
@@ -88,14 +81,21 @@ function StoryForm()
                     return  <div key={index}>{e.title}</div>
                 })
         } */}
-             {
-                historyArr.map(function(a, index)
+             {/* {
+                return historyArr.map(function(a, index)
                     {
-                        return( <div key={index}>
+                        return( <span key={index}>
                             <button value={a}></button>
-                        </div>)
+                        </span>)
                     })
-            }
+            } */}
+
+        return historyArr.map((b,ind)  
+        {
+            <div key={ind}>
+                <button>b</button>
+            </div>
+        })
            
     </>
   )
